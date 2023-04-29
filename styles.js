@@ -21,10 +21,17 @@ export default createGlobalStyle`
 
 body {
     font-family: 'Starjedi', sans-serif;
+    background-image: url("/images/stars-background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
 }
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
+
+p {
+  color: white;
+}
 `;
