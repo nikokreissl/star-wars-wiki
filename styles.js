@@ -13,10 +13,7 @@ export default createGlobalStyle`
 }
 
 :root {
-    --primary-color: #2D2727;
-    --secondary-color: #D7C235;
-    --tertiary-color: #1C418C;
-    --alt-color: #A60321;
+    --star-wars-yellow: #ffe81f;
 }
 
 body {
@@ -24,6 +21,7 @@ body {
     background-image: url("/images/stars-background.jpg");
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
+    color: white;
 }
   *,
   *::before,

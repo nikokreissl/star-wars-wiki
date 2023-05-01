@@ -5,6 +5,6 @@ export default function Header() {
 }
 
 const StyledHeadline = styled.h1`
-  color: #ffe81f;
+  color: var(--star-wars-yellow);
   text-align: center;
 `;
