@@ -3,9 +3,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { objectToArray } from "@/utils/object-to-array";
 import { iconList } from "@/public/icons/icons";
+import LoadingSpinner from "@/components/Animations/loading-spinner";
 
 export default function Home() {
-  const [allData, setAllData] = useState([]);
+  const [allData, setAllData] = useState();
 
   useEffect(() => {
     async function fetchData() {
@@ -17,7 +18,7 @@ export default function Home() {
   }, []);
 
   if (!allData) {
-    return <div>Loading...</div>;
+    return <LoadingSpinner />;
   }
 
   return (
@@ -29,7 +30,7 @@ export default function Home() {
         {allData.map((data) => {
           return (
             <li key={data.itemName}>
-              <StyledItemLink href={data.link}>
+              <StyledItemLink href={`/listings/?${data.itemName}`}>
                 {iconList.find((icon) => icon.iconFor === data.itemName).icon}
                 {data.itemName}
               </StyledItemLink>
@@ -49,10 +50,10 @@ const StyledHomeSearchText = styled.p`
 const StyledItemsList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 30px;
+  gap: 20px 30px;
   justify-content: center;
   list-style-type: none;
-  margin-top: 50px;
+  margin-top: 30px;
 `;
 
 const StyledItemLink = styled(Link)`

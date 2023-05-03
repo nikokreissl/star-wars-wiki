@@ -32,4 +32,8 @@ body {
 p {
   color: white;
 }
+
+button {
+  font-family: 'Starjedi', sans-serif;
+}
 `;
