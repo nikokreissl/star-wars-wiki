@@ -51,7 +51,7 @@ export default function ListingsPage() {
       <StyledDetailList>
         {listingData.results.map((result) => (
           <li key={result.url}>
-            <LinkComponent href={result.url}>
+            <LinkComponent href={`/listings/$`}>
               {result.name ? result.name : result.title}
             </LinkComponent>
           </li>
