@@ -51,7 +51,12 @@ export default function ListingsPage() {
       <StyledDetailList>
         {listingData.results.map((result) => (
           <li key={result.url}>
-            <LinkComponent href={`/listings/$`}>
+            <LinkComponent
+              href={`/listings/${path}/${result.url.substr(
+                result.url.length - 2,
+                1
+              )}`}
+            >
               {result.name ? result.name : result.title}
             </LinkComponent>
           </li>
@@ -86,7 +91,7 @@ const StyledListingText = styled.p`
   text-align: center;
 `;
 
-const StyledDetailList = styled.ul`
+export const StyledDetailList = styled.ul`
   list-style-type: none;
   display: flex;
   flex-direction: column;
